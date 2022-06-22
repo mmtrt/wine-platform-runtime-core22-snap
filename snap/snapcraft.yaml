@@ -41,14 +41,13 @@ parts:
       - libgstreamer-plugins-base1.0-0
       - libgcrypt20
       - locales-all
-      - libldap-2.4-2
+      - libldap-2.5-0
       - libncurses5
       - libopenal1
       - libpcap0.8
       - libpulse0
       - libudev1
       - libxext6
-      - libxml2
       - libcapi20-3
       - libcups2
       - libcanberra-gtk-module
@@ -60,7 +59,7 @@ parts:
       - libgssapi-krb5-2
       - libodbc1
       - libosmesa6
-      - libsane
+      - libsane1
       - libsdl2-2.0-0
       - libv4l-0
       - libvulkan1
