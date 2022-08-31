@@ -27,8 +27,10 @@ parts:
     override-build: |
       craftctl default
       if [ "$CRAFT_ARCH_TRIPLET" = "x86_64-linux-gnu" ]; then
-        sudo dpkg --add-architecture i386
         sudo apt update
+        sudo apt install software-properties-common
+        sudo dpkg --add-architecture i386
+        sudo add-apt-repository universe multiverse restricted -y
       fi
 
   wine-runtime:
