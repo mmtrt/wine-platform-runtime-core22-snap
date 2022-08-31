@@ -8,6 +8,7 @@ grade: stable
 confinement: strict
 architectures:
   - build-on: amd64
+    build-for: amd64
 base: core22
 compression: lzo
 
