@@ -27,8 +27,8 @@ parts:
     override-build: |
       craftctl default
       if [ "$CRAFT_ARCH_TRIPLET" = "x86_64-linux-gnu" ]; then
-        dpkg --add-architecture i386
-        apt update
+        sudo dpkg --add-architecture i386
+        sudo apt update
       fi
 
   wine-runtime:
