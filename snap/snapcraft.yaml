@@ -23,14 +23,14 @@ slots:
       - $SNAP/usr
 
 parts:
-  enable-i386:
-    plugin: nil
-    override-build: |
-      craftctl default
-      sudo apt update
-      sudo apt install software-properties-common
-      sudo dpkg --add-architecture i386
-      sudo add-apt-repository universe multiverse restricted -y
+  #enable-i386:
+    #plugin: nil
+    #override-build: |
+      #craftctl default
+      #sudo apt update
+      #sudo apt install software-properties-common
+      #sudo dpkg --add-architecture i386
+      #sudo add-apt-repository universe multiverse restricted -y
 
   wine-runtime:
     plugin: nil
@@ -126,6 +126,10 @@ parts:
         - mesa-vulkan-drivers:i386
     override-build: |
       craftctl default
+      sudo apt update
+      sudo apt install software-properties-common
+      sudo dpkg --add-architecture i386
+      sudo add-apt-repository universe multiverse restricted -y
       sed -i 's|/usr|$SNAP/wine-runtime/usr|' $CRAFT_PART_INSTALL/usr/bin/7z
       sed -i 's|/usr|$SNAP/wine-runtime/usr|' $CRAFT_PART_INSTALL/usr/bin/7za
       sed -i 's|/usr|$SNAP/wine-runtime/usr|' $CRAFT_PART_INSTALL/usr/bin/7zr
@@ -142,8 +146,8 @@ parts:
       rm -rf $CRAFT_PART_INSTALL/usr/share/man
       rm -rf $CRAFT_PART_INSTALL/usr/share/pixmaps
       rm -rf $CRAFT_PART_INSTALL/usr/share/pkgconfig
-    after:
-      - enable-i386
+    #after:
+      #- enable-i386
 
   wine-platform-runtime:
     plugin: dump
