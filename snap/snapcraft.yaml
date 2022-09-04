@@ -47,7 +47,7 @@ parts:
       - p7zip-full
       - mesa-utils
       - vulkan-tools
-      - wine-staging
+      - winehq-staging
     override-build: |
       craftctl default
       sed -i 's|/usr|$SNAP/wine-runtime/usr|' $CRAFT_PART_INSTALL/usr/bin/7z
