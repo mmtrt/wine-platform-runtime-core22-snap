@@ -23,12 +23,12 @@ slots:
       - $SNAP/usr
 
 parts:
-  package-repositories:
-    - type: apt
-      architectures: [i386]
-      formats: [deb]
-      components: [main, multiverse, universe, restricted]
-      suites: [jammy, jammy-updates]
+package-repositories:
+  - type: apt
+    architectures: [i386]
+    formats: [deb]
+    components: [main, multiverse, universe, restricted]
+    suites: [jammy, jammy-updates]
 
   wine-runtime:
     plugin: nil
@@ -141,7 +141,7 @@ parts:
       rm -rf $CRAFT_PART_INSTALL/usr/share/pixmaps
       rm -rf $CRAFT_PART_INSTALL/usr/share/pkgconfig
     after:
-      - enable-i386
+      - package-repositories
 
   wine-platform-runtime:
     plugin: dump
