@@ -23,12 +23,12 @@ slots:
       - $SNAP/usr
 
 parts:
-package-repositories:
-  - type: apt
-    architectures: [i386]
-    formats: [deb]
-    components: [main, multiverse, universe, restricted]
-    suites: [jammy, jammy-updates]
+  package-repositories:
+    - type: apt
+      architectures: [i386]
+      formats: [deb]
+      components: [main, multiverse, universe, restricted]
+      suites: [jammy, jammy-updates]
 
   wine-runtime:
     plugin: nil
