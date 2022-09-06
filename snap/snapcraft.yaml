@@ -23,14 +23,12 @@ slots:
       - $SNAP/usr
 
 parts:
-  enable-i386:
-    plugin: nil
-    override-pull: |
-      craftctl default
-      apt update
-      apt install software-properties-common -y
-      dpkg --add-architecture i386
-      add-apt-repository universe multiverse restricted -y
+  package-repositories:
+    - type: apt
+      architectures: [i386]
+      formats: [deb]
+      components: [main, multiverse, universe, restricted]
+      suites: [jammy, jammy-updates]
 
   wine-runtime:
     plugin: nil
