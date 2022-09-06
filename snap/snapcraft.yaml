@@ -25,7 +25,7 @@ slots:
 parts:
   enable-i386:
     plugin: nil
-    override-build: |
+    override-pull: |
       craftctl default
       sudo apt update
       sudo apt install software-properties-common
