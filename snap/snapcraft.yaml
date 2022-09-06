@@ -28,7 +28,7 @@ parts:
     override-pull: |
       craftctl default
       apt update
-      apt install software-properties-common
+      apt install software-properties-common -y
       dpkg --add-architecture i386
       add-apt-repository universe multiverse restricted -y
 
