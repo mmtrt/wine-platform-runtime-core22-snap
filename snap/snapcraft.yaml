@@ -22,13 +22,16 @@ slots:
       - $SNAP/lib
       - $SNAP/usr
 
+package-repositories:
+  - type: apt
+    architectures: [i386,amd64]
+    key-id: 78E1918602959B9C59103100F1831DDAFC42E99D
+    formats: [deb]
+    components: [main, multiverse, universe, restricted]
+    suites: [jammy]
+    url: https://packages.ubuntu.com/
+
 parts:
-  package-repositories:
-    - type: apt
-      architectures: [i386]
-      formats: [deb]
-      components: [main, multiverse, universe, restricted]
-      suites: [jammy, jammy-updates]
 
   wine-runtime:
     plugin: nil
