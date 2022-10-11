@@ -30,7 +30,7 @@ package-repositories:
     formats: [deb]
     components: [main, multiverse, universe, restricted]
     suites: [jammy]
-    url: http://archive.ubuntu.com/ubuntu
+    url: https://archive.ubuntu.com/ubuntu
 
 parts:
 
