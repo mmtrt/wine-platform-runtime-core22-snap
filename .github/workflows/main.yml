@@ -5,8 +5,8 @@ name: CI
 # Controls when the workflow will run
 on:
   # Build at 00:00 on every 7th day-of-month.
-  #schedule:
-    #- cron: "0 0 */7 * *"
+  schedule:
+    - cron: "0 0 */7 * *"
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ test ]
@@ -35,4 +35,4 @@ jobs:
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
         with:
           snap: ${{ steps.build.outputs.snap }}
-          release: edge
+          release: edge,stable
