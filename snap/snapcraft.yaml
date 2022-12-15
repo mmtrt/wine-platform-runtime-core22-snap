@@ -87,6 +87,7 @@ parts:
       - libpci3
       - zlib1g
       - xdg-utils
+      - xdg-user-dirs
       - fontconfig-config
       - pciutils
       - lsof
