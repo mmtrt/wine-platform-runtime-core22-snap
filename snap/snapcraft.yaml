@@ -179,6 +179,7 @@ parts:
       - wget               # winetricks
       - x11-xserver-utils  # sommelier
       - yad                # winetricks
+      - jq                 # desktop-launch
     override-build: |
       craftctl default
       touch $CRAFT_PART_INSTALL/wprfile
