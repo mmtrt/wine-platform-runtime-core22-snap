@@ -11,6 +11,8 @@ architectures:
     build-for: amd64
 base: core22
 compression: lzo
+assumes:
+  - snapd2.55.4
 
 lint:
   # Snapcraft's `ldd` lint can't handle 32-bit things,
